@@ -29,7 +29,7 @@ This is checked in the tests.
 import "github.com/starius/aesctrat"
 
 key := make([]byte, 16) // Or 24 or 32.
-ctr := NewAesCtr(key)
+ctr := aesctrat.NewAesCtr(key)
 
 iv := make([]byte, 16)
 offset := uint64(5) // Skip 5 bytes.
