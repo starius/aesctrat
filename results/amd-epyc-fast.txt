@@ -1,0 +1,54 @@
+goos: linux
+goarch: amd64
+pkg: github.com/starius/aesctrat
+cpu: AMD EPYC Processor (with IBPB)
+BenchmarkAesCtr/keySize=16/shift=0/offset=0-3         	     190	   6163607 ns/op	5443.96 MB/s
+BenchmarkAesCtr/keySize=16/shift=0/offset=1-3         	     180	   6908473 ns/op	4857.00 MB/s
+BenchmarkAesCtr/keySize=16/shift=0/offset=16-3        	     194	   6284011 ns/op	5339.65 MB/s
+BenchmarkAesCtr/keySize=16/shift=0/offset=1024-3      	     192	   6146551 ns/op	5459.07 MB/s
+BenchmarkAesCtr/keySize=16/shift=1/offset=0-3         	     172	   6958699 ns/op	4821.94 MB/s
+BenchmarkAesCtr/keySize=16/shift=1/offset=1-3         	     195	   6104558 ns/op	5496.62 MB/s
+BenchmarkAesCtr/keySize=16/shift=1/offset=16-3        	     168	   6724910 ns/op	4989.57 MB/s
+BenchmarkAesCtr/keySize=16/shift=1/offset=1024-3      	     166	   6953462 ns/op	4825.57 MB/s
+BenchmarkAesCtr/keySize=16/shift=8/offset=0-3         	     181	   6809612 ns/op	4927.51 MB/s
+BenchmarkAesCtr/keySize=16/shift=8/offset=1-3         	     181	   6493057 ns/op	5167.74 MB/s
+BenchmarkAesCtr/keySize=16/shift=8/offset=16-3        	     192	   6572578 ns/op	5105.22 MB/s
+BenchmarkAesCtr/keySize=16/shift=8/offset=1024-3      	     172	   6713110 ns/op	4998.34 MB/s
+BenchmarkAesCtr/keySize=16/shift=14/offset=0-3        	     177	   6927475 ns/op	4843.67 MB/s
+BenchmarkAesCtr/keySize=16/shift=14/offset=1-3        	     172	   6454810 ns/op	5198.36 MB/s
+BenchmarkAesCtr/keySize=16/shift=14/offset=16-3       	     170	   7044109 ns/op	4763.47 MB/s
+BenchmarkAesCtr/keySize=16/shift=14/offset=1024-3     	     176	   6794792 ns/op	4938.26 MB/s
+BenchmarkAesCtr/keySize=24/shift=0/offset=0-3         	     176	   6550449 ns/op	5122.46 MB/s
+BenchmarkAesCtr/keySize=24/shift=0/offset=1-3         	     164	   7269416 ns/op	4615.84 MB/s
+BenchmarkAesCtr/keySize=24/shift=0/offset=16-3        	     181	   6655182 ns/op	5041.85 MB/s
+BenchmarkAesCtr/keySize=24/shift=0/offset=1024-3      	     180	   6536266 ns/op	5133.58 MB/s
+BenchmarkAesCtr/keySize=24/shift=1/offset=0-3         	     159	   7086594 ns/op	4734.92 MB/s
+BenchmarkAesCtr/keySize=24/shift=1/offset=1-3         	     181	   6553259 ns/op	5120.27 MB/s
+BenchmarkAesCtr/keySize=24/shift=1/offset=16-3        	     163	   7260916 ns/op	4621.24 MB/s
+BenchmarkAesCtr/keySize=24/shift=1/offset=1024-3      	     163	   7289684 ns/op	4603.00 MB/s
+BenchmarkAesCtr/keySize=24/shift=8/offset=0-3         	     164	   7207736 ns/op	4655.34 MB/s
+BenchmarkAesCtr/keySize=24/shift=8/offset=1-3         	     168	   7179168 ns/op	4673.86 MB/s
+BenchmarkAesCtr/keySize=24/shift=8/offset=16-3        	     165	   7200204 ns/op	4660.21 MB/s
+BenchmarkAesCtr/keySize=24/shift=8/offset=1024-3      	     165	   7217417 ns/op	4649.09 MB/s
+BenchmarkAesCtr/keySize=24/shift=14/offset=0-3        	     157	   7136693 ns/op	4701.68 MB/s
+BenchmarkAesCtr/keySize=24/shift=14/offset=1-3        	     158	   7094612 ns/op	4729.57 MB/s
+BenchmarkAesCtr/keySize=24/shift=14/offset=16-3       	     163	   7143040 ns/op	4697.50 MB/s
+BenchmarkAesCtr/keySize=24/shift=14/offset=1024-3     	     165	   7155403 ns/op	4689.38 MB/s
+BenchmarkAesCtr/keySize=32/shift=0/offset=0-3         	     162	   7360373 ns/op	4558.80 MB/s
+BenchmarkAesCtr/keySize=32/shift=0/offset=1-3         	     147	   8098489 ns/op	4143.30 MB/s
+BenchmarkAesCtr/keySize=32/shift=0/offset=16-3        	     163	   7369792 ns/op	4552.97 MB/s
+BenchmarkAesCtr/keySize=32/shift=0/offset=1024-3      	     160	   7441330 ns/op	4509.20 MB/s
+BenchmarkAesCtr/keySize=32/shift=1/offset=0-3         	     151	   7939305 ns/op	4226.37 MB/s
+BenchmarkAesCtr/keySize=32/shift=1/offset=1-3         	     162	   7307683 ns/op	4591.67 MB/s
+BenchmarkAesCtr/keySize=32/shift=1/offset=16-3        	     145	   8125415 ns/op	4129.57 MB/s
+BenchmarkAesCtr/keySize=32/shift=1/offset=1024-3      	     146	   7767715 ns/op	4319.73 MB/s
+BenchmarkAesCtr/keySize=32/shift=8/offset=0-3         	     151	   7887925 ns/op	4253.90 MB/s
+BenchmarkAesCtr/keySize=32/shift=8/offset=1-3         	     154	   7776779 ns/op	4314.70 MB/s
+BenchmarkAesCtr/keySize=32/shift=8/offset=16-3        	     146	   7885038 ns/op	4255.46 MB/s
+BenchmarkAesCtr/keySize=32/shift=8/offset=1024-3      	     150	   8178386 ns/op	4102.82 MB/s
+BenchmarkAesCtr/keySize=32/shift=14/offset=0-3        	     150	   7976961 ns/op	4206.42 MB/s
+BenchmarkAesCtr/keySize=32/shift=14/offset=1-3        	     153	   7892150 ns/op	4251.62 MB/s
+BenchmarkAesCtr/keySize=32/shift=14/offset=16-3       	     146	   8053003 ns/op	4166.70 MB/s
+BenchmarkAesCtr/keySize=32/shift=14/offset=1024-3     	     150	   8073180 ns/op	4156.28 MB/s
+PASS
+ok  	github.com/starius/aesctrat	92.361s
