@@ -1,4 +1,4 @@
-# aesctrat
+# aesctrat [![GoDoc](https://pkg.go.dev/badge/github.com/starius/aesctrat)](https://pkg.go.dev/github.com/starius/aesctrat)
 
 Fast implementation of seekable AES-CTR in Go
 
