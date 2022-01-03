@@ -89,7 +89,7 @@ def ctr(n):
             print '\tADCQ $0, IV_HIGH'
 
     # Initial key add.
-    print '\tADDQ $16, AX'
+    print '\tADDQ $16, XK'
     for i in xrange(n):
         print '\tPXOR {reg_key}, X{i}'.format(i=i, **params)
 
@@ -99,7 +99,7 @@ def ctr(n):
     print '\tJB Lenc128'
 
     def enc(ax, inst='AESENC'):
-        print '\tMOVUPS {offset}(AX), {reg_key}'.format(offset=16*ax, **params)
+        print '\tMOVUPS {offset}(XK), {reg_key}'.format(offset=16*ax, **params)
         for i in xrange(n):
             print '\t{inst} {reg_key}, X{i}'.format(inst=inst, i=i, **params)
 
@@ -107,13 +107,13 @@ def ctr(n):
     print 'Lenc256:'
     enc(0)
     enc(1)
-    print '\tADDQ $32, AX'
+    print '\tADDQ $32, XK'
 
     # 2 extra rounds for 192-bit keys.
     print 'Lenc192:'
     enc(0)
     enc(1)
-    print '\tADDQ $32, AX'
+    print '\tADDQ $32, XK'
 
     # 10 rounds for 128-bit (with special handling for final).
     print 'Lenc128:'
