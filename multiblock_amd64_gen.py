@@ -89,9 +89,9 @@ def ctr(n):
             print '\tADCQ $0, IV_HIGH'
 
     # Initial key add.
-    print '\tADDQ $16, XK'
     for i in xrange(n):
         print '\tPXOR {reg_key}, X{i}'.format(i=i, **params)
+    print '\tADDQ $16, XK'
 
     # Num rounds branching.
     print '\tSUBQ $12, NR'
