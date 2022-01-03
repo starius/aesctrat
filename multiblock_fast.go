@@ -1,6 +1,9 @@
+//go:build amd64
+// +build amd64
+
 package aesctrat
 
-//go:generate sh -c "PYTHONIOENCODING=utf8 python multiblock_gen.py 1,2,4,8 > multiblock_amd64.s"
+//go:generate sh -c "PYTHONIOENCODING=utf8 python multiblock_amd64_gen.py 1,2,4,8 > multiblock_amd64.s"
 
 // Download asm_amd64.s and cut expandKeyAsm only.
 //go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/b81735924936291303559fd71dabaa1aa88f57c5/src/crypto/aes/asm_amd64.s > _asm_amd64.s"
