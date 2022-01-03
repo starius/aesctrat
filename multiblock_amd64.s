@@ -41,7 +41,7 @@ TEXT ·ctrBlocks1Asm(SB),NOSPLIT,$0
 	PSHUFB BSWAP, X0
 	ADDQ $16, AX
 	PXOR X1, X0
-	SUBQ $12, CX
+	SUBQ $12, NR
 	JE Lenc192
 	JB Lenc128
 Lenc256:
@@ -110,7 +110,7 @@ TEXT ·ctrBlocks2Asm(SB),NOSPLIT,$0
 	ADDQ $16, AX
 	PXOR X2, X0
 	PXOR X2, X1
-	SUBQ $12, CX
+	SUBQ $12, NR
 	JE Lenc192
 	JB Lenc128
 Lenc256:
@@ -208,7 +208,7 @@ TEXT ·ctrBlocks4Asm(SB),NOSPLIT,$0
 	PXOR X4, X1
 	PXOR X4, X2
 	PXOR X4, X3
-	SUBQ $12, CX
+	SUBQ $12, NR
 	JE Lenc192
 	JB Lenc128
 Lenc256:
@@ -364,7 +364,7 @@ TEXT ·ctrBlocks8Asm(SB),NOSPLIT,$0
 	PXOR X8, X5
 	PXOR X8, X6
 	PXOR X8, X7
-	SUBQ $12, CX
+	SUBQ $12, NR
 	JE Lenc192
 	JB Lenc128
 Lenc256:

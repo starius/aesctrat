@@ -94,7 +94,7 @@ def ctr(n):
         print '\tPXOR {reg_key}, X{i}'.format(i=i, **params)
 
     # Num rounds branching.
-    print '\tSUBQ $12, CX'
+    print '\tSUBQ $12, NR'
     print '\tJE Lenc192'
     print '\tJB Lenc128'
 
