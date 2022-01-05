@@ -1,0 +1,39 @@
+goos: linux
+goarch: amd64
+pkg: crypto/aes
+cpu: AMD EPYC Processor (with IBPB)
+BenchmarkEncrypt-3   	58020648	        18.58 ns/op	 860.99 MB/s
+BenchmarkDecrypt-3   	95082508	        16.64 ns/op	 961.34 MB/s
+BenchmarkExpand-3    	25181331	        44.69 ns/op
+PASS
+ok  	crypto/aes	4.654s
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD EPYC Processor (with IBPB)
+BenchmarkAESGCM/Open-128-64-3         	 6149509	       175.0 ns/op	 365.74 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-128-64-3         	 5684836	       210.1 ns/op	 304.59 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-256-64-3         	 5866548	       176.9 ns/op	 361.77 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-256-64-3         	 4798876	       240.4 ns/op	 266.25 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-128-1350-3       	 1522359	       679.8 ns/op	1985.97 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-128-1350-3       	 2578563	       477.2 ns/op	2829.11 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-256-1350-3       	 1699393	       730.3 ns/op	1848.62 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-256-1350-3       	 1427863	       846.5 ns/op	1594.74 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-128-8192-3       	  479274	      3417 ns/op	2397.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-128-8192-3       	  589743	      3094 ns/op	2647.75 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-256-8192-3       	  252463	      4416 ns/op	1855.17 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-256-8192-3       	  282952	      4109 ns/op	1993.81 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESCFBEncrypt1K-3            	  338064	      3323 ns/op	 306.67 MB/s
+BenchmarkAESCFBDecrypt1K-3            	  458487	      3157 ns/op	 322.76 MB/s
+BenchmarkAESCFBDecrypt8K-3            	   44761	     23449 ns/op	 349.15 MB/s
+BenchmarkAESOFB1K-3                   	  548743	      2156 ns/op	 472.61 MB/s
+BenchmarkAESCTR1K-3                   	  615454	      2521 ns/op	 404.17 MB/s
+BenchmarkAESCTR8K-3                   	   60999	     19438 ns/op	 421.19 MB/s
+BenchmarkAESCBCEncrypt1K-3            	  979929	      1912 ns/op	 535.70 MB/s
+BenchmarkAESCBCDecrypt1K-3            	  544878	      2279 ns/op	 449.24 MB/s
+BenchmarkXORBytes/8Bytes-3            	89584776	        12.89 ns/op	 620.56 MB/s
+BenchmarkXORBytes/128Bytes-3          	100000000	        13.74 ns/op	9312.60 MB/s
+BenchmarkXORBytes/2048Bytes-3         	10666816	       101.8 ns/op	20115.43 MB/s
+BenchmarkXORBytes/32768Bytes-3        	  616395	      1845 ns/op	17763.28 MB/s
+PASS
+ok  	crypto/cipher	39.416s
