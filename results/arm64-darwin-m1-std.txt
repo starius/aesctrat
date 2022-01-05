@@ -1,0 +1,30 @@
+goos: darwin
+goarch: arm64
+pkg: crypto/aes
+BenchmarkEncrypt-8   	204853796	         5.719 ns/op	2797.88 MB/s
+BenchmarkDecrypt-8   	209142625	         5.754 ns/op	2780.78 MB/s
+BenchmarkExpand-8    	19022406	        63.14 ns/op
+PASS
+ok  	crypto/aes	5.112s
+goos: darwin
+goarch: arm64
+pkg: crypto/cipher
+BenchmarkAESGCMSeal1K-8      	 6251047	       191.7 ns/op	5340.63 MB/s
+BenchmarkAESGCMOpen1K-8      	 6774992	       177.2 ns/op	5777.47 MB/s
+BenchmarkAESGCMSign8K-8      	 1345168	       885.6 ns/op	9250.22 MB/s
+BenchmarkAESGCMSeal8K-8      	  961402	      1251 ns/op	6546.48 MB/s
+BenchmarkAESGCMOpen8K-8      	 1000000	      1136 ns/op	7208.24 MB/s
+BenchmarkAESCFBEncrypt1K-8   	 1000000	      1132 ns/op	 900.33 MB/s
+BenchmarkAESCFBDecrypt1K-8   	 1277065	       924.5 ns/op	1102.21 MB/s
+BenchmarkAESCFBDecrypt8K-8   	  163762	      7223 ns/op	1133.46 MB/s
+BenchmarkAESOFB1K-8          	  951615	      1261 ns/op	 808.04 MB/s
+BenchmarkAESCTR1K-8          	 2231613	       532.9 ns/op	1912.01 MB/s
+BenchmarkAESCTR8K-8          	  289526	      4243 ns/op	1929.33 MB/s
+BenchmarkAESCBCEncrypt1K-8   	 1227639	       980.4 ns/op	1044.51 MB/s
+BenchmarkAESCBCDecrypt1K-8   	 1649410	       729.0 ns/op	1404.72 MB/s
+BenchmarkXORBytes/8Bytes-8   	269669258	         4.450 ns/op	1797.58 MB/s
+BenchmarkXORBytes/128Bytes-8 	156966294	         7.670 ns/op	16687.60 MB/s
+BenchmarkXORBytes/2048Bytes-8         	32328021	        37.09 ns/op	55211.89 MB/s
+BenchmarkXORBytes/32768Bytes-8        	 2403412	       503.3 ns/op	65104.29 MB/s
+PASS
+ok  	crypto/cipher	26.917s

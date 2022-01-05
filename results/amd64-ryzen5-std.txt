@@ -1,0 +1,39 @@
+goos: linux
+goarch: amd64
+pkg: crypto/aes
+cpu: AMD Ryzen 5 5600G with Radeon Graphics         
+BenchmarkEncrypt-4   	209482041	         5.830 ns/op	2744.52 MB/s
+BenchmarkDecrypt-4   	203956688	         5.799 ns/op	2758.94 MB/s
+BenchmarkExpand-4    	64558050	        18.05 ns/op
+PASS
+ok  	crypto/aes	4.777s
+goos: linux
+goarch: amd64
+pkg: crypto/cipher
+cpu: AMD Ryzen 5 5600G with Radeon Graphics         
+BenchmarkAESGCM/Open-128-64-4         	17520738	        68.98 ns/op	 927.83 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-128-64-4         	14254456	        84.09 ns/op	 761.09 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-256-64-4         	14838714	        80.38 ns/op	 796.18 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-256-64-4         	12534417	       112.6 ns/op	 568.40 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-128-1350-4       	 4011164	       294.4 ns/op	4585.97 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-128-1350-4       	 3810951	       313.8 ns/op	4302.75 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-256-1350-4       	 3590402	       336.3 ns/op	4014.52 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-256-1350-4       	 3281068	       369.7 ns/op	3651.45 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-128-8192-4       	  837870	      1445 ns/op	5667.67 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-128-8192-4       	  816417	      1434 ns/op	5712.11 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Open-256-8192-4       	  726577	      1635 ns/op	5010.15 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESGCM/Seal-256-8192-4       	  735847	      1666 ns/op	4918.46 MB/s	       0 B/op	       0 allocs/op
+BenchmarkAESCFBEncrypt1K-4            	  942865	      1255 ns/op	 811.75 MB/s
+BenchmarkAESCFBDecrypt1K-4            	 1000000	      1078 ns/op	 945.47 MB/s
+BenchmarkAESCFBDecrypt8K-4            	  140175	      8506 ns/op	 962.53 MB/s
+BenchmarkAESOFB1K-4                   	 1429594	       856.0 ns/op	1190.36 MB/s
+BenchmarkAESCTR1K-4                   	 1000000	      1126 ns/op	 904.60 MB/s
+BenchmarkAESCTR8K-4                   	  133154	      9035 ns/op	 906.12 MB/s
+BenchmarkAESCBCEncrypt1K-4            	 1282752	       944.9 ns/op	1083.72 MB/s
+BenchmarkAESCBCDecrypt1K-4            	 1719594	       695.7 ns/op	1471.81 MB/s
+BenchmarkXORBytes/8Bytes-4            	313930318	         3.821 ns/op	2093.84 MB/s
+BenchmarkXORBytes/128Bytes-4          	205619452	         5.934 ns/op	21570.60 MB/s
+BenchmarkXORBytes/2048Bytes-4         	27587890	        44.44 ns/op	46081.71 MB/s
+BenchmarkXORBytes/32768Bytes-4        	 1380648	       861.3 ns/op	38046.67 MB/s
+PASS
+ok  	crypto/cipher	35.338s
