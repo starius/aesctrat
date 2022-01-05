@@ -24,8 +24,7 @@ This is checked in the tests.
 
 ## Benchmarks
 
-![aes_benchmark](https://user-images.githubusercontent.com/7602655/148281470-cd5fff01-592e-4715-a1c3-8780d338ab7c.png)
-
+![aes_benchmark](https://user-images.githubusercontent.com/7602655/148282052-03345482-520e-4a7a-8638-ecf9b18c790b.png)
 
 
 | CPU                 | std.CTR | std.GCM/Seal | aesctrat.slow | aesctrat.fast | Speedup (std.CTR -> aesctrat.fast) |
