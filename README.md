@@ -7,7 +7,7 @@ Inspired by experiments in https://github.com/mmcloughlin/aesnix
 This implementation supports passing arbitrary offset,
 which is useful to make IO in the middle of a file.
 
-Implemented in ASM for amd64. Speedup is based on running
+Implemented in ASM for amd64 and arm64. Speedup is based on running
 multiple AES instructions in a row to handle multiple blocks.
 I think, the speedup is caused by instruction pipelining.
 
