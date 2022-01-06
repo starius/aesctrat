@@ -24,6 +24,9 @@ This is checked in the tests.
 
 ## Benchmarks
 
+![aes_benchmark](https://user-images.githubusercontent.com/7602655/148282052-03345482-520e-4a7a-8638-ecf9b18c790b.png)
+
+
 | CPU                 | std.CTR | std.GCM/Seal | aesctrat.slow | aesctrat.fast | Speedup (std.CTR -> aesctrat.fast) |
 |---------------------|---------|--------------|---------------|---------------|------------------------------------|
 | amd64-epyc          | 421.19  | 2829.11      | 470.17        | 5443.96       | 12.9x                              |
