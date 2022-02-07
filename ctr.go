@@ -85,6 +85,16 @@ func (c *AesCtr) slowXORKeyStreamAt(dst, src, iv []byte, offset uint64) {
 	}
 }
 
+// Download xor_* files from Go standard lib.
+//go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/2c76a6f7f85365cefb5200b2b3408fd6bd421b3d/src/crypto/cipher/xor_amd64.go > xor_amd64.go"
+//go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/2c76a6f7f85365cefb5200b2b3408fd6bd421b3d/src/crypto/cipher/xor_amd64.s > xor_amd64.s"
+//go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/2c76a6f7f85365cefb5200b2b3408fd6bd421b3d/src/crypto/cipher/xor_arm64.go > xor_arm64.go"
+//go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/2c76a6f7f85365cefb5200b2b3408fd6bd421b3d/src/crypto/cipher/xor_arm64.s > xor_arm64.s"
+//go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/2c76a6f7f85365cefb5200b2b3408fd6bd421b3d/src/crypto/cipher/xor_generic.go > xor_generic.go"
+//go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/2c76a6f7f85365cefb5200b2b3408fd6bd421b3d/src/crypto/cipher/xor_ppc64x.go > xor_ppc64x.go"
+//go:generate sh -c "curl --silent https://raw.githubusercontent.com/golang/go/2c76a6f7f85365cefb5200b2b3408fd6bd421b3d/src/crypto/cipher/xor_ppc64x.s > xor_ppc64x.s"
+//go:generate sh -c "sed 's/package cipher/package aesctrat/' -i xor*"
+
 func xor(dst, src1, src2 []byte) {
 	n := len(dst)
 	if len(src1) < n {
@@ -93,7 +103,5 @@ func xor(dst, src1, src2 []byte) {
 	if len(src2) < n {
 		n = len(src2)
 	}
-	for i := 0; i < n; i++ {
-		dst[i] = src1[i] ^ src2[i]
-	}
+	_ = xorBytes(dst, src1, src2)
 }
