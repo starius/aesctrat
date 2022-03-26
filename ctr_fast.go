@@ -3,16 +3,19 @@
 
 package aesctrat
 
-import "fmt"
+import (
+	"fmt"
 
-const BlockSize = 16
+	"golang.org/x/sys/cpu"
+)
 
-type AesCtr struct {
-	expandedKeyEnc []uint32
-	rounds         int
-}
+var supportsAES = cpu.X86.HasAES || cpu.ARM64.HasAES
 
 func NewAesCtr(key []byte) *AesCtr {
+	if !supportsAES {
+		return newSlowAesCtr(key)
+	}
+
 	var rounds int
 	if len(key) == 16 {
 		rounds = 10
@@ -33,6 +36,11 @@ func NewAesCtr(key []byte) *AesCtr {
 }
 
 func (c *AesCtr) XORKeyStreamAt(dst, src, iv []byte, offset uint64) {
+	if c.aesCipher != nil {
+		c.slowXORKeyStreamAt(dst, src, iv, offset)
+		return
+	}
+
 	if len(iv) != BlockSize {
 		panic(fmt.Sprintf("bad IV length: %d", len(iv)))
 	}
